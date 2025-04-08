@@ -3,3 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    font-family: $primaryFont;
+}
+
+.container-fluid{
+    padding: 0 45px;
+}
