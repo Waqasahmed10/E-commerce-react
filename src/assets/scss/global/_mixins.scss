@@ -1,0 +1,122 @@
+@mixin placeholder($a) {
+    &:-moz-placeholder {
+        color: $a;
+        opacity: 1;
+    }
+
+    &::-moz-placeholder {
+        color: $a;
+        opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+        color: $a;
+        opacity: 1;
+    }
+
+    &::-webkit-input-placeholder {
+        color: $a;
+        opacity: 1;
+    }
+}
+
+@mixin para($color, $font-size, $margin:0, $padding:0) {
+    color: $color;
+    font-size: $font-size;
+    /*line-height: ($font-size - 0.01em);*/
+    line-height: normal;
+    margin: $margin;
+    padding: $padding;
+}
+
+@mixin hidedd {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-2em);
+    pointer-events: none;
+    transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+
+@mixin showdd {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0%);
+    pointer-events: inherit;
+    transition-delay: 0s, 0s, 0.3s;
+}
+
+@mixin dohide {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+@mixin doshow {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: inherit;
+}
+
+@mixin ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre;
+    max-width: 100%;
+}
+
+@mixin placeholderUpper {
+    ::-webkit-input-placeholder {
+        text-transform: uppercase;
+    }
+
+    :-moz-placeholder {
+        text-transform: uppercase;
+    }
+
+    ::-moz-placeholder {
+        text-transform: uppercase;
+    }
+
+    :-ms-input-placeholder {
+        text-transform: uppercase;
+    }
+
+    ::placeholder {
+        text-transform: uppercase;
+    }
+}
+
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+}
+
+@mixin placeHolderAnim {
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderAnim;
+    animation-timing-function: linear;
+    background: rgba(246,247,248,.5);
+    background: linear-gradient(90deg,#eee 8%,#ddd 18%,#eee 33%);
+    transition: all .35s;
+}
+
+@keyframes placeHolderAnim {
+    0% {
+        background-position: -468px 0
+    }
+
+    to {
+        background-position: 468px 0
+    }
+}
+
+@mixin fontCalcSize($biggestFont, $smalestFont) {
+    font-size: calc(#{$smalestFont}px + (#{$biggestFont} - #{$smalestFont}) * (100vw - 320px) / (1920 - 320));
+}
+
+@mixin lineHeight($lh){
+    line-height: calc(#{$lh} + 0.5vw);
+}

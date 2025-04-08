@@ -1,0 +1,541 @@
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+    .form-ic{
+        font-size: 15px;
+        color: $iPrimary;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 19px;
+        line-height: 0;
+        .ic-13{
+            font-size: 16px;
+        }
+    }
+    &.queryarea{
+        .form-ic{
+            top: 22px;
+            @media(max-width:767px){
+                top: 21px;
+            }
+        }
+        .form-control{
+            padding-left: 15px;
+            height: 251px;
+        }
+    }
+   
+}
+
+.textarea,
+.form-control {
+    @include fontCalcSize(14, 13);
+    color:  $iGray5;
+    background-color: $white;
+    line-height: normal;
+    font-weight: 400;
+    width: 100%;
+    padding: 12px 10px 12px 40px;
+    border-radius: 6px;
+    height: 57px;
+    text-align: left;
+    border: 1px solid transparent;
+    font-weight: 500;
+    transition: all .35s ease;
+ 
+    &::placeholder{
+        color: $iGray5;
+    }
+
+    &.is--error {
+        border-color: red;
+    }
+    &.error-field {
+        border-color: red !important;
+    }
+
+    &[read-only] {
+        color: $iBlack;
+        background-color: $white;
+    }
+
+    &.is--disabled {
+        background-color: $white;
+        color: $iGray;
+    }
+
+    &.is--focus {
+        background-color: $white;
+    }
+
+    &.is--used {
+        background-color: $white;
+    }
+
+    &:focus {
+        box-shadow: none;
+    }
+
+    @media (max-width:1199px){
+        height: 55px;
+    }
+
+    @media (max-width: 767px) {
+        font-size: 13px;
+        height: 40px;
+    }
+}
+
+.animateLable {
+    position: relative;
+    .label {
+        left: 10px;
+        top: 50%;
+        font-size: 11px;
+        margin-bottom: 0;
+        transition: all .35s ease;
+        position: absolute;
+        font-weight: 400;
+        margin-top: -8px;
+    }
+    .form-control {
+        padding: 20px 10px 6px;
+        font-size: 12px;
+    }
+    &.is--focus,
+    &.is--used {
+        .label {
+            top: 12px;
+            font-size: 9px;
+        }
+        
+    }
+}
+
+.sameonwhatsapp {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    .custom-checkbox {
+        margin-right: 10px;
+        flex-shrink: 0;
+    }
+    label {
+        margin-bottom: 0;
+    }
+}
+
+.iti,
+select {
+    width: 100%;
+    font-size: 14px;
+}
+
+.iti--separate-dial-code {
+    .iti__selected-dial-code {
+        font-size: 14px;
+        font-weight: 400;
+
+        @media (max-width: 767px) {
+            font-size: 12px;
+        }
+    }
+}
+
+.iti__flag{
+    background-image:url('../img/icons/flags.png');
+
+    @media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){
+        background-image:url('../img/icons/flags@2x.png')
+    }
+}
+
+.textarea {
+    height: 220px;
+
+    &.form-control {
+        height: 220px;
+    }
+}
+
+.label {
+    font-size: 13px;
+    font-weight: 700;
+    color: $black;
+    position: relative;
+    display: block;
+    margin-bottom: 5px;
+
+    @media (max-width: 767px) {
+        font-size: 12px;
+    }
+}
+
+.custom-checkbox {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    vertical-align: middle;
+
+    input {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+
+        &:checked,
+        [checked="checked"] {
+            ~.as-checkbox {
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    label {
+        font-size: 14px;
+
+        @media (max-width: 1700px) {
+            font-size: 13px;
+        }
+    }
+
+    &:hover {
+        border-color: $iGray;
+    }
+
+    &:focus {
+        border-color: $iBlack;
+    }
+
+    .as-checkbox {
+        border: 1px solid $iPrimary;
+        width: 100%;
+        height: 100%;
+        border-radius: 2px;
+        appearance: none;
+        transition: all .35s ease;
+        position: absolute;
+        text-align: center;
+        background-color: $white;
+        margin-bottom: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:after {
+            content: "\e91e";
+            font-family: $iconFontFamily;
+            font-size: 9px;
+            font-weight: 700;
+            opacity: 0;
+        }
+    }
+}
+
+.custom-radio {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $iGray3;
+    border-radius: 50%;
+    padding: 2px;
+    flex-shrink: 0;
+
+    input {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+
+        &:checked,
+        [checked="checked"] {
+            ~.as-radio {
+                background-color: $iPrimary;
+            }
+        }
+    }
+
+    &:hover {
+        border-color: $black;
+    }
+
+    &:focus {
+        border-color: $black;
+    }
+
+    .as-radio {
+        width: 50%;
+        height: 50%;
+        border-radius: 50%;
+        appearance: none;
+        transition: all .35s ease;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        background-color: transparent;
+    }
+}
+
+.search-box {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 0;
+
+    .form-control {
+        padding-right: 40px;
+    }
+
+    .btn {
+        background-color: transparent;
+        border-radius: 2px;
+        height: 28px;
+        width: 28px;
+        text-align: center;
+        border: 0;
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        margin: 0;
+        line-height: 0;
+        padding: 0;
+        color: $iPrimary;
+
+        >i {
+            padding: 0;
+        }
+
+        &:hover {
+            background-color: $iGray;
+        }
+    }
+}
+
+.btn {
+    @include fontCalcSize(16, 12);
+    font-weight: 700;
+    padding: 10px 33px;
+    border-radius: 0;
+    text-align: center;
+
+  
+
+    &.btn-primary {
+        background-color: $iPrimary2;
+        border-color: $iPrimary2;
+        color: $white;
+        font-weight: 400;
+        text-transform: uppercase;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px .2rem rgba($iPrimary, .3);
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background-color: $black;
+            border-color: $black;
+            color: $white;
+        }
+    }
+
+    &.btn-secondary {
+        background-color: $iSecondary;
+        border-color: $iSecondary;
+        color: $white;
+        font-weight: 700;
+        padding: 10px 40px;
+        text-transform: uppercase;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px .2rem rgba($black, .3);
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background-color: $iPrimary;
+            border-color: $iPrimary;
+        }
+    }
+    &.btn-form {
+        background-color: $iSecondary;
+        border: 2px solid $iSecondary;
+        color: $white;
+        font-weight: 600;
+        padding: 8px 20px;
+        text-transform: uppercase;
+        @include fontCalcSize(22, 14);
+        letter-spacing: 5px;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px .2rem rgba($black, .3);
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background-color: transparent;
+            border-color: $iSecondary;
+            color: $white;
+        }
+        @media(max-width:991px){
+            letter-spacing: 0;
+            border-radius: 6px;
+        }
+    }
+
+    &.btn-round {
+        border-radius: 25px;
+        background-color: transparent;
+        font-size: 13px;
+    }
+
+    &.btn-link {
+        color: $iPrimary;
+        padding: 10px 0 0;
+        font-weight: 400;
+        font-size: 20px;
+        position: relative;
+        line-height: normal;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background-color: $iPrimary;
+        }
+
+        &:hover,
+        &.focus,
+        &:focus {
+            text-decoration: none;
+            color: #c20828;
+        }
+
+        &.link-white {
+            color: $white;
+
+            &:hover,
+            &.focus,
+            &:focus {
+                color: $iPrimary;
+            }
+        }
+
+        @media(max-width:767px) {
+            font-size: 18px;
+        }
+
+        @media(max-width:575px) {
+            font-size: 16px;
+        }
+    }
+
+    &.is-disabled,
+    &.disabled,
+    &:disabled,
+    [disabled],
+    [disabled="disabled"] {
+        background-color: $iGray;
+        border-color: $iGray;
+        color: $white;
+        cursor: none;
+    }
+
+    &.sm-pd {
+        padding: 5px 10px;
+    }
+
+    &.md-pd {
+        padding: 5px 20px;
+    }
+
+    &.xl-pd {
+        padding: 11px 20px;
+        font-size: 17px;
+
+        @media(max-width:1440px) {
+            font-size: 14px;
+        }
+
+        @media(max-width:575px) {
+            font-size: 12px;
+        }
+    }
+
+    &.min-wd100 {
+        min-width: 100px;
+    }
+
+    &.wdper-100 {
+        width: 100%;
+    }
+}
+
+button,
+.btn {
+    &:focus {
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+.form_message {
+    display: none;
+}
+
+.formStepsSec {
+    height: 55px;
+}
+
+.form-steps {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-100%);
+    transition: all .35s ease;
+    height: 0;
+
+    &.is--active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: inherit;
+        transform: translateY(0);
+        height: auto;
+    }
+}
