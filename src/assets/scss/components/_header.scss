@@ -13,14 +13,21 @@ header{
             .selectDrop{
                 width: 18%;
                 flex: 0 0 auto;
-                font-size: 18px;
+                font-size: 12px;
                 font-weight: 500;
+                position: relative;
             }
           .search{
            flex: 1;
             position: relative;
             padding-left: 15px;
             margin-left: 15px;
+            .searchicon{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 10px;
+            }
             &::before{
                 content: '';
                 position: absolute;
@@ -43,4 +50,60 @@ header{
 }
 .c-pointer{
     cursor: pointer;
+}
+
+.selectinner{
+    width: 250px;
+  
+    background: #f1f1f1;
+    position: absolute;
+    top: calc(100% + 21px);
+    left: -22px;
+    z-index: 100;
+    padding: 10px;
+    box-shadow: 0 5px 9px 1px rgba($black, 0.2);
+ 
+    .searchfield{
+  
+        input{
+            width: 100%;
+            height: 40px;
+            border: 1px solid $iPrimary;
+            padding: 0 15px;
+        }
+   
+    }
+    .search-result{
+        width: 100%;
+        max-height: 250px;
+        overflow-y: scroll;
+        margin-top: 10px;
+        li{
+            font-size: 15px;
+            width: 100%;
+            padding: 10px;
+            &:hover{
+                background: $iPrimary;
+                color: $white;
+            }
+        }
+        &::-webkit-scrollbar{
+            width: 7px !important;
+    
+        }
+        &::-webkit-scrollbar-thumb{
+            background: $iGray4;
+        }
+      
+    }
+    .openselect{
+        display: block;
+        padding: 10px 0;
+    }
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+ 
 }
